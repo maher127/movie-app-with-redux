@@ -4,12 +4,10 @@ import { connect } from "react-redux";
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 
 class EditMovie extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modal: false
-    };
-  }
+  state = {
+    modal: false
+  };
+
   componentDidMount() {
     this.setState({
       ...this.props.movies.filter(movie => movie.id === this.props.id)[0]
@@ -27,7 +25,7 @@ class EditMovie extends Component {
   };
 
   edit = () => {
-    this.props.edit(this.state);
+    this.props.edit({ ...this.state, modal: false });
     this.toggle();
   };
   render() {

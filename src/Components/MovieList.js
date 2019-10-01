@@ -6,11 +6,7 @@ import AddMovie from "./AddMovie";
 
 class MovieList extends Component {
   state = {};
-  // componentDidMount() {
-  //   this.setState({
-  //     ...this.props.movies.filter(movie => movie.id === this.props.id)[0]
-  //   });
-  // }
+
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
